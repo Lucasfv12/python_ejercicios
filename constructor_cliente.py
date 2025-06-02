@@ -1,35 +1,26 @@
-# Clase Cliente
-class Cliente:
-    def __init__(self, nombre, email, telefono):
+class Estudiante:
+    def __init__(self, nombre, edad, grado):
         self.nombre = nombre
-        self.email = email
-        self.telefono = telefono
-        self.compras = []
-
-    def agregar_compra(self, producto, monto):
-        self.compras.append({"producto": producto, "monto": monto})
-
-    def total_gastado(self):
-        return sum(compra["monto"] for compra in self.compras)
-
-    def info(self):
-        print(f"Cliente: {self.nombre}")
-        print(f"Email: {self.email}")
-        print(f"Teléfono: {self.telefono}")
-        print(f"Total gastado: ${self.total_gastado()}")
+        self.edad = edad
+        self.grado = grado
         
-# Crear algunos clientes
-cliente1 = Cliente("María López", "maria@gmail.com", "123456789")
-cliente2 = Cliente("Juan Pérez", "juan@gmail.com", "987654321")
+    def estudiar(self):
+        print(f"el estudiante {self.nombre} está estudiando")
+    
+class Docente(Estudiante):
+    def __init__(self, nombre, edad, grado, trabajo, sueldo):
+        super().__init__(nombre, edad, grado)
+        self.trabajo = trabajo
+        self.sueldo = sueldo
+        
+        
+    
+        
+        
+Estudiante1 = Estudiante("Lucas", 12, "6to")
 
-# Agregar compras
-cliente1.agregar_compra("Notebook", 1200)
-cliente1.agregar_compra("Mouse", 25)
+Estudiante1.estudiar()
 
-cliente2.agregar_compra("Monitor", 300)
 
-# Mostrar info
-cliente1.info()
-print("------")
-cliente2.info()
+
 
